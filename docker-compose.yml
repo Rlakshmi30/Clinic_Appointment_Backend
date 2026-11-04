@@ -5,10 +5,10 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_DB: clinic_appointment_system
-      POSTGRES_USER: clinic_user
-      POSTGRES_PASSWORD: clinic_dev_password
+      POSTGRES_USER: shrishti_05
+      POSTGRES_PASSWORD: ripu_0530
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
