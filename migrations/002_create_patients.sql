@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS patients(
-    id UUID PRIMAY KEY DEFAULT gen_random_uuid(),
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID UNIQUE NOT NULL
         REFERENCES users(id) ON DELETE CASCADE,
         phone VARCHAR(20),

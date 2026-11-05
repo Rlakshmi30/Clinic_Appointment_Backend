@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 
 {
   "compilerOptions": {
@@ -14,24 +13,3 @@
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"]
 }
-=======
-
-{
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-<<<<<<< HEAD
-    "rootDir": "src",
-=======
-    "rootDir": ".",
->>>>>>> 5926b17 (Set up backend and authentication structure)
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*.ts", "tests/**/*.ts"]
-}
->>>>>>> Stashed changes

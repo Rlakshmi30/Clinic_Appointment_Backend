@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS doctors (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
-    user_id UUID UNIQUE NOT NULL,
+    user_id UUID UNIQUE NOT NULL
         REFERENCES users(id) ON DELETE CASCADE,
      
     specialization VARCHAR(100) NOT NULL,
