@@ -1,13 +1,12 @@
-<<<<<<< Updated upstream
 services:
   db:
     image: postgres:16
     container_name: clinic-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: clinic_appointment_system
-      POSTGRES_USER: shrishti_05
-      POSTGRES_PASSWORD: ripu_0530
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5433:5432"
     volumes:
@@ -15,21 +14,3 @@ services:
 
 volumes:
   postgres_data:
-=======
-services:
-  db:
-    image: postgres:16
-    container_name: clinic-postgres
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: clinic_appointment_system
-      POSTGRES_USER: clinic_user
-      POSTGRES_PASSWORD: clinic_dev_password
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
->>>>>>> Stashed changes
