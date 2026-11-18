@@ -1,5 +1,6 @@
 import type { ErrorRequestHandler } from "express";
 import { ZodError } from "zod";
+import { AppError } from "../utils/app-error";
 export const errorMiddleware: ErrorRequestHandler = (
     error: unknown,
     _req,
@@ -17,6 +18,16 @@ export const errorMiddleware: ErrorRequestHandler = (
         });
         return;
     }
+    if (error instanceof AppError){
+        res.status(error.statusCode).json({
+            error: {
+                code: error.code,
+                message: error.message,
+        },
+        });
+        return;
+    }
+    console.error("API Error: ", error);
     res.status(500).json({
         error: {
             code: "INTENAL_SERVER_ERROR",

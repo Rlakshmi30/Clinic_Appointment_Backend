@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { login, register } from "../controllers/auth.controller";
+import { login, register, refresh, logout } from "../controllers/auth.controller";
 import { loginSchema, registerSchema } from "../validators/auth.validators";
+import { getMe } from "../controllers/auth.controller";
+import { authenticate } from "../middleware/auth.middleware";
 const router = Router();
 router.post("/login", (req, res, next) => {
     const validation = loginSchema.safeParse(req.body);
@@ -39,6 +41,9 @@ router.post(
     },
     register
 );
+router.post("/refresh", refresh);
+router.post("/logout", logout);
+router.get("/me", authenticate, getMe)
 export default router;
 
 
