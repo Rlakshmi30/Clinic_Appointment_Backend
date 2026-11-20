@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS users(
     password_hash TEXT NOT NULL,
     role VARCHAR(20) NOT NULL
             CHECK (role IN ('admin', 'doctor', 'patient')),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

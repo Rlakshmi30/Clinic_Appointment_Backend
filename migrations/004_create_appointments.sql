@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS appointments (
             'cancelled'
         )
     ),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

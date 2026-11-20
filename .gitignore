@@ -5,4 +5,5 @@ dist/
 !.env.example
 .git/
 coverage/
-uploads/*cookies.txt
+uploads/
+cookies.txt

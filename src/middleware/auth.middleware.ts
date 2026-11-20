@@ -15,10 +15,13 @@ export interface AuthRequest extends Request {
  ) => {
     try {
         const authHeader = req.headers.authorization;
-        if (!authHeader || !authHeader.startsWith("Bearer")){
+        if (!authHeader || !authHeader.startsWith("Bearer ")){
             throw new AppError ("Authentication required", 401, "UNAUTHORIZED");
         }
         const token = authHeader.split(" ")[1];
+        if(!token) {
+            throw new AppError("Authentication required", 401, "UNAUTHORIZED")
+        }
         const decoded = jwt.verify(token, env.JWT_SECRET);
         if (
             typeof decoded === "string" ||

@@ -127,7 +127,7 @@ export const getMe = async (
       success: true,
       data: { user },
     });
-  } catch(error) {
+  } catch (error) {
     next(error);
   }
 }
